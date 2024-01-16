@@ -12,7 +12,7 @@ import { response } from 'express';
 const createTrip = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, description, img_url, num_days, start_date, end_date, total_cost } = req.body;
     try {
-        const results = yield pool.query('INSERT INTO trips (title, description, img_url, num_days, start_date, end_date, total_cost) VALUES ($1,$2,$3,$4, $5, $6, $7) RETURNING *', [title, description, img_url, num_days, start_date, end_date, total_cost]);
+        const results = yield pool.query('INSERT INTO trips (title, description, img_url, num_days, start_date, end_date, total_cost) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *', [title, description, img_url, num_days, start_date, end_date, total_cost]);
         res.status(201).json(results.rows[0]);
     }
     catch (error) {
