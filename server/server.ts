@@ -11,7 +11,7 @@ app.get('/', (req,res) => {
 })
 
 
-app.use('/trips', tripRoutes)
+app.use('/api/trips', tripRoutes)
 
 const PORT = process.env.PORT || 3001
 

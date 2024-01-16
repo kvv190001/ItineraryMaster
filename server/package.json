@@ -4,8 +4,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && npm run reset && nodemon --require dotenv/config server/server.js",
-    "reset": "node --require dotenv/config server/config/reset.js",
+    "start": "tsc && npm run reset && nodemon --require dotenv/config server.js",
+    "reset": "cd config && node --require dotenv/config reset.js",
     "compile": "tsc",
     "dev": "npm run compile && node dist/server.js"
   },
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/kvv190001/ItineraryMaster#readme",
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/pg": "^8.10.9",
     "typescript": "^5.3.3"

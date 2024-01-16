@@ -7,7 +7,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">✈️ Itinerary Master</h1>');
 });
-app.use('/trips', tripRoutes);
+app.use('/api/trips', tripRoutes);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${3001}`);
