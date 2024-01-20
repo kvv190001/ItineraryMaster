@@ -64,12 +64,14 @@ const seedTripsTable = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 const createDestinationsTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const createDestinationsTableQuery = `
+        DROP TABLE IF EXISTS destinations CASCADE;
+
         CREATE TABLE IF NOT EXISTS destinations (
             id serial PRIMARY KEY,
             destination varchar(100) NOT NULL,
             description text NOT NULL,
             city varchar(100) NOT NULL,
-            contry varchar(100) NOT NULL,
+            country varchar(100) NOT NULL,
             img_url text NOT NULL,
             flag_img_url text NOT NULL
         );

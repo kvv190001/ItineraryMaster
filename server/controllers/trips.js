@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { pool } from '../config/database.js';
-import { response } from 'express';
 const createTrip = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, description, img_url, num_days, start_date, end_date, total_cost } = req.body;
     try {
@@ -46,7 +45,7 @@ const updateTrip = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.status(200).json(results.rows[0]);
     }
     catch (error) {
-        response.status(409).json({ error: error.message });
+        res.status(409).json({ error: error.message });
     }
 });
 const deleteTrip = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

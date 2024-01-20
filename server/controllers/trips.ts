@@ -44,7 +44,7 @@ const updateTrip = async (req: Request, res: Response) => {
         )
         res.status(200).json(results.rows[0])
     } catch (error) {
-        response.status(409).json({error: (error as Error).message})
+        res.status(409).json({error: (error as Error).message})
     }
 }
 
