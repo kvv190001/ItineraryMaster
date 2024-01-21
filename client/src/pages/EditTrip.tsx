@@ -13,11 +13,7 @@ type TripItem = {
     total_cost: string
 }
 
-type TripProps = {
-    data: TripItem[]
-}
-
-const EditTrip = ({data}: TripProps) => {
+const EditTrip = ({data, api_url}) => {
 
     const {id} = useParams<{id: string}>();
     const [post, setPost] = useState({id: 0, title: "", description: "", img_url: "", num_days: 0, start_date: "", end_date: "", total_cost: "0.0" })
@@ -50,7 +46,7 @@ const EditTrip = ({data}: TripProps) => {
             body: JSON.stringify(post)
         }
 
-        fetch('/api/trips/' + id, options)
+        fetch(`${api_url}/api/trips/` + id, options)
         window.location.href = '/'
     }
 
@@ -62,7 +58,7 @@ const EditTrip = ({data}: TripProps) => {
             method: 'DELETE'
         }
 
-        fetch('/api/trips/' + id, options)
+        fetch(`${api_url}/api/trips/` + id, options)
         window.location.href = '/'
     }
 

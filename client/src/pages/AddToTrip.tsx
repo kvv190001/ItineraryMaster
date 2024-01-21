@@ -10,6 +10,7 @@ type Trip = {
 
 type TripProps = {
     data: Trip[]
+    api_url: string
 }
 
 const AddToTrip = (props: TripProps) => {
