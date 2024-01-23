@@ -37,8 +37,8 @@ router.get(
 router.get(
     '/github/callback',
     passport.authenticate('github', {
-        successRedirect: '/',
-        failureRedirect: '/'
+        successRedirect: 'https://itinerarymaster-production-b25a.up.railway.app/',
+        failureRedirect: 'https://itinerarymaster-production-b25a.up.railway.app/destinations'
     })
 )
 
