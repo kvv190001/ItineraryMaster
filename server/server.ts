@@ -18,9 +18,11 @@ app.use(session({
     saveUninitialized: true
 }))
 
+const CLIENT_URL = 'http://localhost:5173'
+
 app.use(express.json())
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: CLIENT_URL,
     methods: 'GET,POST,PUT,DELETE,PATCH',
     credentials: true
 }))
@@ -39,7 +41,7 @@ passport.deserializeUser((user: any, done) => {
 
 
 app.get('/', (req, res) => {
-    res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">✈️ Itinerary Master</h1>')
+    res.redirect(CLIENT_URL)
 })
 
 // auth routes

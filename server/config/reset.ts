@@ -22,8 +22,6 @@ type Trip = {
 
 const createTripsTable = async () => {
     const createTripsTableQuery = `
-        DROP TABLE IF EXISTS trips CASCADE;
-
         CREATE TABLE IF NOT EXISTS trips (
             id serial PRIMARY KEY,
             title varchar(100) NOT NULL,
@@ -72,8 +70,6 @@ const seedTripsTable = async () => {
 
 const createDestinationsTable = async () => {
     const createDestinationsTableQuery = `
-        DROP TABLE IF EXISTS destinations CASCADE;
-
         CREATE TABLE IF NOT EXISTS destinations (
             id serial PRIMARY KEY,
             destination varchar(100) NOT NULL,
@@ -133,8 +129,6 @@ const createTripsDestinationsTable = async () => {
 
 const createUsersTable = async () => {
     const createUsersTableQuery = `
-        DROP TABLE IF EXISTS users CASCADE;
-
         CREATE TABLE IF NOT EXISTS users (
             id serial PRIMARY KEY,
             githubid integer NOT NULL,
@@ -188,7 +182,8 @@ const createUsersTripsTable = async () => {
 }
 
 
-seedTripsTable()
+// seedTripsTable()
+createTripsTable()
 createDestinationsTable()
 createActivitiesTable()
 createTripsDestinationsTable()

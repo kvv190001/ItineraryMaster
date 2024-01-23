@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AddTripOptionCard from '../components/AddTripOptionCard';
 
 type Trip = {
-    id: string
+    id: number
     title: string
     description: string
     img_url: string

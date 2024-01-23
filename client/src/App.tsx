@@ -11,12 +11,13 @@ import { Link } from 'react-router-dom'
 import CreateActivity from './pages/CreateActivity'
 import AddToTrip from './pages/AddToTrip'
 import Login from './pages/Login'
+import Avatar from './components/Avatar'
 
 type userData = {
   id: number
   githubid: number
   username: string
-  avatar_url: string
+  avatarurl: string
   accesstoken: string
 }
 
@@ -25,12 +26,13 @@ const App = () => {
   
   const [trips, setTrips] = useState([])
   const [destinations, setDestinations] = useState([])
-  const [user, setUser] = useState<userData[]>([])
+  const [user, setUser] = useState<userData>()
 
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(`${API_URL}/auth/login/success`, {credentials: 'include'})
       const json = await response.json()
+      console.log(json.user)
       setUser(json.user)
     }
 
@@ -51,47 +53,53 @@ const App = () => {
     fetchDestinations()
   }, [API_URL]);
 
+  const logout =  async () => {
+    const response = await fetch(`${API_URL}/auth/logout`, { credentials: 'include' })
+    await response.json()
+    window.location.href = '/'
+  }
+
   // Sets up routes
   let element = useRoutes([
     {
       path: "/",
       element: user && user.id ?
-        <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL}/>
+        <ReadTrips data={trips} /> : <Login api_url={API_URL}/>
     },
     {
       path:"/trip/new",
       element: user && user.id ?
-        <CreateTrip user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateTrip api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/edit/:id",
       element: user && user.id ?
-        <EditTrip user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <EditTrip data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destinations",
       element: user && user.id ?
-      <ReadDestinations user={user} data={destinations} /> : <Login api_url={API_URL} />
+      <ReadDestinations data={destinations} /> : <Login api_url={API_URL} />
     },
     {
       path:"/trip/get/:id",
       element: user && user.id ?
-        <TripDetails user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <TripDetails data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destination/new/:trip_id",
       element: user && user.id ?
-        <CreateDestination user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateDestination api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/activity/create/:trip_id",
       element: user && user.id ?
-        <CreateActivity user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateActivity api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destinations/add/:destination_id",
       element: user && user.id ?
-        <AddToTrip user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <AddToTrip data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     }
   ]);
 
@@ -101,10 +109,12 @@ const App = () => {
       {
         user && user.id ?
           <div className="header">
-            <h1>On The Fly ✈️</h1>
+            <h1>Itinerary Master ✈️</h1>
             <Link to="/"><button className="headerBtn">Explore Trips</button></Link>
             <Link to="/destinations"><button className="headerBtn">Explore Destinations</button></Link>
             <Link to="/trip/new"><button className="headerBtn"> + Add Trip </button></Link>
+            <button onClick={logout} className='headerBtn'>Logout</button>
+            <Avatar className='avatar' user={user} />
           </div>
         : <></>
       }

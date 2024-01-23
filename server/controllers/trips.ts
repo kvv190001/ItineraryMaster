@@ -2,12 +2,20 @@ import {pool} from '../config/database.js'
 import { Request, Response, response } from 'express'
 
 const createTrip = async (req: Request,res: Response) => {
-    const {title, description, img_url, num_days, start_date, end_date, total_cost} = req.body
+    const {title, description, img_url, num_days, start_date, end_date, total_cost, username} = req.body
     try{
         const results = await pool.query(
             'INSERT INTO trips (title, description, img_url, num_days, start_date, end_date, total_cost) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
             [title, description, img_url, num_days, start_date, end_date, total_cost]
         )
+
+        const tripUser = await pool.query(
+            `INSERT INTO users_trips (trip_id, username)
+            VALUES($1, $2)
+            RETURNING *`,
+            [results.rows[0].id, username]
+        )
+      
     
         res.status(201).json(results.rows[0])
     } catch (error) {
