@@ -5,7 +5,7 @@ import passport from 'passport'
 const options = {
     clientID: process.env.GITHUB_CLIENT_ID as string,
     clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
-    callbackURL: "itinerarymaster-production.up.railway.app/auth/github/callback"
+    callbackURL: "https://itinerarymaster-production.up.railway.app/auth/github/callback"
 }
 
 const verify =  async (accessToken: any, refreshToken: any, profile: any, callback: any) => {
