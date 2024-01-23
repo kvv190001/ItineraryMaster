@@ -23,6 +23,7 @@ type userData = {
 
 const App = () => {
   const API_URL = import.meta.env.MODE === 'production' ? 'itinerarymaster-production.up.railway.app' : 'http://localhost:3001'
+  console.log(API_URL)
   
   const [trips, setTrips] = useState([])
   const [destinations, setDestinations] = useState([])
