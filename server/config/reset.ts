@@ -181,9 +181,8 @@ const createUsersTripsTable = async () => {
     }
 }
 
-
-// seedTripsTable()
-createTripsTable()
+// createTripsTable()
+seedTripsTable()
 createDestinationsTable()
 createActivitiesTable()
 createTripsDestinationsTable()
