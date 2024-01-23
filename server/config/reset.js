@@ -17,8 +17,6 @@ const tripsFile = fs.readFileSync(path.join(dirname(currentPath), '../config/dat
 const tripsData = JSON.parse(tripsFile);
 const createTripsTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const createTripsTableQuery = `
-        DROP TABLE IF EXISTS trips CASCADE;
-
         CREATE TABLE IF NOT EXISTS trips (
             id serial PRIMARY KEY,
             title varchar(100) NOT NULL,
@@ -64,8 +62,6 @@ const seedTripsTable = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 const createDestinationsTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const createDestinationsTableQuery = `
-        DROP TABLE IF EXISTS destinations CASCADE;
-
         CREATE TABLE IF NOT EXISTS destinations (
             id serial PRIMARY KEY,
             destination varchar(100) NOT NULL,
@@ -122,8 +118,6 @@ const createTripsDestinationsTable = () => __awaiter(void 0, void 0, void 0, fun
 });
 const createUsersTable = () => __awaiter(void 0, void 0, void 0, function* () {
     const createUsersTableQuery = `
-        DROP TABLE IF EXISTS users CASCADE;
-
         CREATE TABLE IF NOT EXISTS users (
             id serial PRIMARY KEY,
             githubid integer NOT NULL,
@@ -175,6 +169,7 @@ const createUsersTripsTable = () => __awaiter(void 0, void 0, void 0, function* 
         console.error('⚠️ error creating users_trips table', err);
     }
 });
+// createTripsTable()
 seedTripsTable();
 createDestinationsTable();
 createActivitiesTable();

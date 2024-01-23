@@ -12,7 +12,7 @@ import { Strategy as GitHubStrategy } from 'passport-github2';
 const options = {
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3001/auth/github/callback"
+    callbackURL: "itinerarymaster-production.up.railway.app/auth/github/callback"
 };
 const verify = (accessToken, refreshToken, profile, callback) => __awaiter(void 0, void 0, void 0, function* () {
     const { _json: { id, name, login, avatar_url } } = profile;
