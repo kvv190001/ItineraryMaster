@@ -25,7 +25,6 @@ const App = () => {
   const API_URL = import.meta.env.MODE === 'production' ? 'https://itinerarymaster-production.up.railway.app' : 'http://localhost:3001'
   
   const [trips, setTrips] = useState([])
-  const [destinations, setDestinations] = useState([])
   const [user, setUser] = useState<userData>()
 
   useEffect(() => {
@@ -42,15 +41,8 @@ const App = () => {
       setTrips(data)
     }
 
-    const fetchDestinations = async () => {
-      const response = await fetch(`${API_URL}/api/destinations`)
-      const data = await response.json()
-      setDestinations(data)
-    }
-
     getUser()
     fetchTrips()
-    fetchDestinations()
   }, [API_URL]);
 
   const logout =  async () => {
@@ -79,7 +71,7 @@ const App = () => {
     {
       path:"/destinations",
       element: user && user.id ?
-      <ReadDestinations user={user} data={destinations} /> : <Login api_url={API_URL} />
+      <ReadDestinations user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/trip/get/:id",
