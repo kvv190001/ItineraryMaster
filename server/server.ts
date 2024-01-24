@@ -49,6 +49,8 @@ app.get('/', (req, res) => {
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
 // auth routes
 app.use('/auth', authRoutes)
 
