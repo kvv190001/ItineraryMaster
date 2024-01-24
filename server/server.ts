@@ -49,10 +49,6 @@ app.get('/', (req, res) => {
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
-});
-
 // auth routes
 app.use('/auth', authRoutes)
 
@@ -62,6 +58,10 @@ app.use('/api/activities', activityRoutes)
 app.use('/api/destinations', destinationRoutes)
 app.use('/api/trips-destinations', tripDestinationRoutes)
 app.use('/api/users-trips', userTripRoutes)
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3001
 
