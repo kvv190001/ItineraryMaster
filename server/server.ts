@@ -1,4 +1,5 @@
 import express from 'express'
+import { fileURLToPath } from 'url'
 import path from 'path'
 import cors from 'cors'
 import passport from 'passport'
@@ -44,6 +45,9 @@ passport.deserializeUser((user: any, done) => {
 app.get('/', (req, res) => {
     res.redirect(CLIENT_URL)
 })
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
