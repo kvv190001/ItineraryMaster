@@ -12,7 +12,16 @@ type TripData = {
     total_cost: string
 }
 
+type userData = {
+    id: number
+    githubid: number
+    username: string
+    avatarurl: string
+    accesstoken: string
+  }
+
 type TripProps = {
+    user: userData
     data: TripData[]
 }
 

@@ -1,4 +1,5 @@
 import express from 'express'
+import path from 'path'
 import cors from 'cors'
 import passport from 'passport'
 import session from 'express-session'
@@ -43,6 +44,10 @@ passport.deserializeUser((user: any, done) => {
 app.get('/', (req, res) => {
     res.redirect(CLIENT_URL)
 })
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 
 // auth routes
 app.use('/auth', authRoutes)

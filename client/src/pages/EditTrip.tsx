@@ -13,7 +13,15 @@ type TripItem = {
     total_cost: string
 }
 
-const EditTrip = ({data, api_url}) => {
+type userData = {
+    id: number
+    githubid: number
+    username: string
+    avatarurl: string
+    accesstoken: string
+}
+
+const EditTrip = ({user, data, api_url}) => {
 
     const {id} = useParams<{id: string}>();
     const [post, setPost] = useState({id: 0, title: "", description: "", img_url: "", num_days: 0, start_date: "", end_date: "", total_cost: "0.0" })

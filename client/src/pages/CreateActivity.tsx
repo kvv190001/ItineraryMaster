@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useParams } from 'react-router-dom';
 import './CreateActivity.css'
 
-const CreateActivity = ({api_url}) => {
+const CreateActivity = ({user, api_url}) => {
 
     const [activity, setActivity] = useState({activity: "" })
     const {trip_id} = useParams();

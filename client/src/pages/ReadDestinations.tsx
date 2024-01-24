@@ -11,7 +11,16 @@ type DestinationData = {
     flag_img_url: string
 }
 
+type userData = {
+    id: number
+    githubid: number
+    username: string
+    avatarurl: string
+    accesstoken: string
+  }
+
 type DestinationProps = {
+    user: userData
     data: DestinationData[]
 }
 

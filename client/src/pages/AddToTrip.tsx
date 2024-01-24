@@ -8,7 +8,16 @@ type Trip = {
     img_url: string
 }
 
+type userData = {
+    id: number
+    githubid: number
+    username: string
+    avatarurl: string
+    accesstoken: string
+}
+
 type TripProps = {
+    user: userData
     data: Trip[]
     api_url: string
 }

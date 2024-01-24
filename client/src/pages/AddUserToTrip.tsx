@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { useParams } from "react-router-dom"
 import './CreateActivity.css'
 
-const AddUserToTrip = ( { api_url } ) => {
+const AddUserToTrip = ( { user, api_url } ) => {
     const [username, setUsername] = useState({username: ''})
     const {trip_id} = useParams()
 

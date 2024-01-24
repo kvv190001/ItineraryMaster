@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { useParams } from 'react-router-dom';
 import './CreateDestination.css'
 
-const CreateDestination = ({api_url}) => {
+const CreateDestination = ({user, api_url}) => {
 
     const [destination, setDestination] = useState({destination: "", description: "", city: "", country: "", img_url: "", flag_img_url: "" })
     const {trip_id} = useParams();

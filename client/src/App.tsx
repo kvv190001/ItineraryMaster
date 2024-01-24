@@ -23,7 +23,6 @@ type userData = {
 
 const App = () => {
   const API_URL = import.meta.env.MODE === 'production' ? 'https://itinerarymaster-production.up.railway.app' : 'http://localhost:3001'
-  console.log(API_URL)
   
   const [trips, setTrips] = useState([])
   const [destinations, setDestinations] = useState([])
@@ -65,42 +64,42 @@ const App = () => {
     {
       path: "/",
       element: user && user.id ?
-        <ReadTrips data={trips} /> : <Login api_url={API_URL}/>
+        <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL}/>
     },
     {
       path:"/trip/new",
       element: user && user.id ?
-        <CreateTrip api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateTrip user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/edit/:id",
       element: user && user.id ?
-        <EditTrip data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <EditTrip user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destinations",
       element: user && user.id ?
-      <ReadDestinations data={destinations} /> : <Login api_url={API_URL} />
+      <ReadDestinations user={user} data={destinations} /> : <Login api_url={API_URL} />
     },
     {
       path:"/trip/get/:id",
       element: user && user.id ?
-        <TripDetails data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <TripDetails user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destination/new/:trip_id",
       element: user && user.id ?
-        <CreateDestination api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateDestination user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/activity/create/:trip_id",
       element: user && user.id ?
-        <CreateActivity api_url={API_URL} /> : <Login api_url={API_URL} />
+        <CreateActivity user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
     {
       path:"/destinations/add/:destination_id",
       element: user && user.id ?
-        <AddToTrip data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
+        <AddToTrip user={user} data={trips} api_url={API_URL} /> : <Login api_url={API_URL} />
     }
   ]);
 

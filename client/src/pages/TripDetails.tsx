@@ -39,12 +39,21 @@ type TravelerData = {
     accesstoken: string
 }
 
+type userData = {
+    id: number
+    githubid: number
+    username: string
+    avatarurl: string
+    accesstoken: string
+  }
+
 type TripProps = {
-    data: TripData[],
+    user: userData
+    data: TripData[]
     api_url: string
 }
 
-const TripDetails = ({ data, api_url }: TripProps) => {
+const TripDetails = ({ user, data, api_url }: TripProps) => {
 
     const { id } = useParams<{ id: string }>();
     const [post, setPost] = useState({ id: 0, title: "", description: "", img_url: "", num_days: 0, start_date: "", end_date: "", total_cost: "0.0" })
