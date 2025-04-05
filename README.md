@@ -1,9 +1,9 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
+    <img src="https://static-00.iconduck.com/assets.00/airplane-emoji-2048x2048-ht53h55r.png" align="center" width="30%">
 </p>
 <p align="center"><h1 align="center">ITINERARYMASTER</h1></p>
 <p align="center">
-	<em><code>❯ REPLACE-ME</code></em>
+	<em><code>❯ A web app for planning trips with friends and family</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/kvv190001/ItineraryMaster?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -38,13 +38,18 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+Planning a big trip like a bachelor party, graduation tour, or road trip can get complicated, especially when you're balancing different schedules and budgets. With this app Itinerary Master ✈️, planning trips with friends and family feels like a breeze. The web app allows a user to create a new trip and add destinations to that trip. Vegas graduation trip with stops at the Bellagio fountain and Caesar's Palace blackjack tables? Count me in!
 
 ---
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+- Users can view all active trips.
+- Users can create, view, update, and delete a trip.
+- Users can assign a cost, date, and description to a trip.
+- Users can choose from a list of available destinations to assign to a trip.
+- Users can view all trips associated with a given destination.
+- Users can view a trip's budget, description, date, and entertainment options.
 
 ---
 
