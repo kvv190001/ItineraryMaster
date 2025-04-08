@@ -26,7 +26,6 @@
   - [☑️ Prerequisites](#-prerequisites)
   - [⚙️ Installation](#-installation)
   - [🤖 Usage](#🤖-usage)
-  - [🧪 Testing](#🧪-testing)
 - [📌 Project Roadmap](#-project-roadmap)
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
@@ -48,6 +47,7 @@ Planning a big trip like a bachelor party, graduation tour, or road trip can get
 - Users can choose from a list of available destinations to assign to a trip.
 - Users can view all trips associated with a given destination.
 - Users can view a trip's budget, description, date, and entertainment options.
+- Users can upvote entertainment options to help the group decide the destination.
 
 ---
 
@@ -90,22 +90,27 @@ Install ItineraryMaster using one of the following methods:
 
 
 ### 🤖 Usage
-Run ItineraryMaster using the following command:
-**Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
+1. Navigate to the `server` directory:
+```sh
+❯ cd server
+```
 
+2. Run server using the following command:
+**Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
 ```sh
 ❯ npm start
 ```
 
-
-### 🧪 Testing
-Run the test suite using the following command:
-**Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
-
+3. In a different terminal tab or window, navigate to your `client` directory:
 ```sh
-❯ npm test
+❯ cd client
 ```
 
+4. Run client using the following command:
+**Using `npm`** &nbsp; [<img align="center" src="https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white" />](https://www.npmjs.com/)
+```sh
+❯ npm start
+```
 
 ---
 ## 📌 Project Roadmap
