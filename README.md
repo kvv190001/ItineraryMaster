@@ -33,6 +33,11 @@
 
 Planning a big trip like a bachelor party, graduation tour, or road trip can get complicated, especially when you're balancing different schedules and budgets. With this app Itinerary Master ✈️, planning trips with friends and family feels like a breeze. The web app allows a user to create a new trip and add destinations to that trip. Vegas graduation trip with stops at the Bellagio fountain and Caesar's Palace blackjack tables? Count me in!
 
+<p align="center">
+	<img src="https://github.com/user-attachments/assets/48621b33-d62d-4509-a5d2-7482fa3b1542" alt="home-page" width="450" height="420" />
+	<img src="https://github.com/user-attachments/assets/118b8b5d-c2b0-485f-b416-8adb5d708fea" alt="trip-detail" width="450" height="420" />
+</p>
+
 ---
 
 ## 👾 Features
